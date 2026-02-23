@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaInstagram, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
@@ -12,12 +13,12 @@ const Footer = () => {
           </p>
           <p className="text-sm text-gray-400">
             Email:{" "}
-            <a
+            <Link
               href="mailto:prosperitypartners09@gmail.com"
               className="text-gray-200 hover:text-red-400 transition"
             >
               prosperitypartners09@gmail.com
-            </a>{" "}
+            </Link>{" "}
             /{" "}
             <a
               href="mailto:shahdeepakd@gmail.com"
@@ -60,7 +61,7 @@ const Footer = () => {
             © 2025 Prosperity Partners. All rights reserved.
           </p>
           <p className="mt-2 text-sm text-gray-400">
-            <a href="mailto:uspface@gmail.com">Designed by USPFace</a>
+            <Link href="mailto:uspface@gmail.com">Designed by USPFace</Link>
           </p>
         </div>
       </div>

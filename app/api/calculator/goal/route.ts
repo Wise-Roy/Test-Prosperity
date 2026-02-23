@@ -9,20 +9,21 @@ interface GoalRequest {
 
 export async function POST(request: NextRequest) {
   try {
-    const { goalAmount, annualRate, months, years }: GoalRequest = await request.json();
+    const { goalAmount, annualRate, months, years }: GoalRequest =
+      await request.json();
 
     // Input validation
     if (!goalAmount || !annualRate) {
       return NextResponse.json(
         { error: "Please provide amount and rate" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!months && !years) {
       return NextResponse.json(
         { error: "Please provide either months or years" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     const formatINR = (num: number) =>
       num.toLocaleString("en-IN", { maximumFractionDigits: 2 });
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const results: any = {};
 
     if (months) {

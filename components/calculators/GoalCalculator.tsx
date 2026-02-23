@@ -40,6 +40,7 @@ const GoalCalculator = () => {
     setError("");
     
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const requestBody: any = {
         goalAmount: parseFloat(goalAmount),
         annualRate: parseFloat(annualRate),

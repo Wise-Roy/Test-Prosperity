@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logoBg from "@/public/logoBg.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const Navbar = () => {
       <div className="fixed top-0 left-0 w-full bg-white z-20 shadow-md">
         <div className="flex items-center justify-between px-4 py-4 sm:py-6">
           {/* Logo and title */}
-          <a
+          <Link
             href="/"
             className="flex items-center justify-start gap-2 mr-10 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2"
           >
@@ -23,28 +24,31 @@ const Navbar = () => {
             <h1 className="font-bold text-3xl sm:text-lg md:text-2xl lg:text-3xl  whitespace-normal">
               Prosperity Partners
             </h1>
-          </a>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden sm:flex ml-auto items-center gap-6 text-sm sm:text-base font-medium">
-            <a href="/" className="hover:text-amber-600 transition">
+            <Link href="/" className="hover:text-amber-600 transition">
               Home
-            </a>
-            <a href="/#services" className="hover:text-amber-600 transition">
+            </Link>
+            <Link href="/#services" className="hover:text-amber-600 transition">
               Services
-            </a>
-            <a href="/#about" className="hover:text-amber-600 transition">
+            </Link>
+            <Link href="/#about" className="hover:text-amber-600 transition">
               About
-            </a>
-            <a href="/#reviews" className="hover:text-amber-600 transition">
+            </Link>
+            <Link href="/#reviews" className="hover:text-amber-600 transition">
               Reviews
-            </a>
-            <a href="/calculator" className="hover:text-amber-600 transition">
+            </Link>
+            <Link
+              href="/calculator"
+              className="hover:text-amber-600 transition"
+            >
               Calculators
-            </a>
-            <a href="/#contact" className="hover:text-amber-600 transition">
+            </Link>
+            <Link href="/#contact" className="hover:text-amber-600 transition">
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -61,48 +65,48 @@ const Navbar = () => {
         {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="sm:hidden bg-white px-4 pb-4 flex flex-col gap-4 text-base font-medium shadow-md">
-            <a
+            <Link
               href="/"
               className="hover:text-amber-600 transition"
               onClick={toggleMenu}
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#services"
               className="hover:text-amber-600 transition"
               onClick={toggleMenu}
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#about"
               className="hover:text-amber-600 transition"
               onClick={toggleMenu}
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#reviews"
               className="hover:text-amber-600 transition"
               onClick={toggleMenu}
             >
               Reviews
-            </a>
-            <a
+            </Link>
+            <Link
               href="/calculator"
               className="hover:text-amber-600 transition"
               onClick={toggleMenu}
             >
               Calculators
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#contact"
               className="hover:text-amber-600 transition"
               onClick={toggleMenu}
             >
               Contact
-            </a>
+            </Link>
           </div>
         )}
       </div>

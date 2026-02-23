@@ -30,6 +30,7 @@ const LumpsumCalculator = () => {
     setError("");
     
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const requestBody: any = {
         initialInvestment: parseFloat(initialInvestment),
         expectedReturn: parseFloat(expectedReturn),
