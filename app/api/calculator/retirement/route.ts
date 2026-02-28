@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
     });
 
     const weightedPreRetirementReturn =
-      totalExistingSavings === 0 ? 0 : totalWeightedReturn / totalExistingSavings;
+      totalExistingSavings === 0 ? existingSavings?.[0]?.preRetirementReturn : totalWeightedReturn / totalExistingSavings;
 
     const appreciatedExistingSavings = existingSavings.reduce(
       (acc, { amount, preRetirementReturn }) => {
